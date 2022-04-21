@@ -40,6 +40,10 @@ footer div a {
     transition: all 0.3s;
 }
 
+footer div a h2 {
+    text-align: center;
+}
+
 footer div a:hover {
     color: #D319FF;
 }
