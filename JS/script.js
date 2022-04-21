@@ -77,9 +77,9 @@ function renderPipes() {
         //Configurando lower pipe
         context.drawImage(lowerPipe, pipe[i].x, pipe[i].y + constant)
 
-        if (birdX + bird.width >= pipe[i].x && birdX <= pipe[i].x + upperPipe.width) {
+        if (Math.floor(birdX) + bird.width >= pipe[i].x && Math.floor(birdX) <= pipe[i].x + upperPipe.width) {
             // Bird colidiu com o cano de cime ou cano debaixo
-            if (birdY <= pipe[i].y + upperPipe.height || birdY + bird.height >= pipe[i].y + constant) {
+            if (Math.floor(birdY) <= pipe[i].y + upperPipe.height || Math.floor(birdY) + bird.height >= pipe[i].y + constant) {
                 location.reload()
             }
         }
