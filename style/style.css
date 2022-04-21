@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2A2A2A;
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 400;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+header h1 {
+    color: #ffffff;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+footer>div {
+    position: absolute;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+footer div a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+footer div a:hover {
+    color: #D319FF;
+}
+
+div>div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+footer svg {
+    margin-left: 20px;
+    fill: #ffffff;
+    transition: all 0.3s;
+}
