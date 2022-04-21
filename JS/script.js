@@ -106,8 +106,7 @@ function game() {
     context.drawImage(background, 0, 0)
 
     renderPipes()
-    console.log(canvas.height - floor.height)
-    console.log("Bird: " + Math.floor(birdY))
+    
     movingPipes()
 
     floorColision()
