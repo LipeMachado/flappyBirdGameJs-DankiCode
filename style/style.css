@@ -10,8 +10,7 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     margin-top: 20px;
 }
 
@@ -19,11 +18,20 @@ header h1 {
     color: #ffffff;
 }
 
+header h2 {
+    margin-top: 20px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 70vh;
 }
 
 footer>div {
@@ -32,6 +40,7 @@ footer>div {
     display: grid;
     justify-content: center;
     align-items: center;
+    bottom: 30px;
 }
 
 footer div a {
@@ -40,7 +49,7 @@ footer div a {
     transition: all 0.3s;
 }
 
-footer div a h2 {
+footer div a h3 {
     text-align: center;
 }
 
