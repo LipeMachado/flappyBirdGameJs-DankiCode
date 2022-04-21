@@ -52,10 +52,20 @@ function fly() {
     flySound.play();
 }
 
-function game() {
-    // Background
-    context.drawImage(background, 0, 0)
+function movingPipes() {
+    for (let i = 0; i < pipe.length; i++) {
+        //Movimentação do pipe
+        pipe[i].x = pipe[i].x - 1
+        if (pipe[i].x == 80) {
+            pipe.push({
+                x : canvas.width,
+                y : Math.floor(Math.random()*upperPipe.height) - upperPipe.height
+            })
+        }
+    }
+}
 
+function renderPipes() {
     //Criando os Pipes
     for (let i = 0; i < pipe.length; i++) {
         //Posição do pipe lower
@@ -66,24 +76,11 @@ function game() {
         
         //Configurando lower pipe
         context.drawImage(lowerPipe, pipe[i].x, pipe[i].y + constant)
-        
-        //Movimentação do pipe
-        pipe[i].x = pipe[i].x - 1
-        if (pipe[i].x == 80) {
-            pipe.push({
-                x : canvas.width,
-                y : Math.floor(Math.random()*upperPipe.height) - upperPipe.height
-            })
-        }
 
-        //Bird passa entre as bordas do cano
-        if (birdX + bird.width >= pipe[i].x && birdX <= pipe[i].x + upperPipe.width
+        if (birdX + bird.width >= pipe[i].x && birdX <= pipe[i].x + upperPipe.width) {
             // Bird colidiu com o cano de cime ou cano debaixo
-            && (birdY <= pipe[i].y + upperPipe.height || birdY + bird.height >= pipe[i].y + constant)
-            // Bird colidiu com o chão
-            || birdY + bird.height >= canvas.height - floor.height) {
-            if (i === 0) {
-                window.location.reload()
+            if (birdY <= pipe[i].y + upperPipe.height || birdY + bird.height >= pipe[i].y + constant) {
+                location.reload()
             }
         }
 
@@ -92,8 +89,27 @@ function game() {
             score = score + 1;
             scoreSound.play()
         }
-
+        
     }
+}
+
+function colisionResetGame() {
+
+    // Bird colidiu com o chão
+    if (birdY + bird.height >= canvas.height - floor.height) {
+        location.reload()
+    }
+}
+
+function game() {
+    // Background
+    context.drawImage(background, 0, 0)
+
+    renderPipes()
+
+    movingPipes()
+
+    colisionResetGame()
 
     // Desenhando o floor
     context.drawImage(floor, 0, canvas.height - floor.height)
