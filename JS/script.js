@@ -82,8 +82,9 @@ function game() {
             && (birdY <= pipe[i].y + upperPipe.height || birdY + bird.height >= pipe[i].y + constant)
             // Bird colidiu com o chão
             || birdY + bird.height >= canvas.height - floor.height) {
-            location.reload();
-            break;
+            if (i === 0) {
+                window.location.reload()
+            }
         }
 
         //Score
