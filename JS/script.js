@@ -96,7 +96,7 @@ function renderPipes() {
 function floorColision() {
 
     // Bird colidiu com o chão
-    if (Math.floor(birdY) >= canvas.height - floor.height) {
+    if (Math.floor(birdY) + bird.height >= canvas.height - floor.height) {
         location.reload()
     }
 }
