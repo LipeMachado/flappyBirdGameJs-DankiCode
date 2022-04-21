@@ -93,7 +93,7 @@ function renderPipes() {
     }
 }
 
-function colisionResetGame() {
+function floorColision() {
 
     // Bird colidiu com o chão
     if (birdY + bird.height >= canvas.height - floor.height) {
@@ -109,7 +109,7 @@ function game() {
 
     movingPipes()
 
-    colisionResetGame()
+    floorColision()
 
     // Desenhando o floor
     context.drawImage(floor, 0, canvas.height - floor.height)
