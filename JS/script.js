@@ -84,7 +84,7 @@ function game() {
             || birdY + bird.height >= canvas.height - floor.height) {
             scoreSound.pause()
             window.location.reload()
-            //return false
+            return false
         }
 
         //Score
